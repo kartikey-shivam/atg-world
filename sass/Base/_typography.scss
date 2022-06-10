@@ -1,0 +1,39 @@
+.post-content {
+  &_type {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    width: 105px;
+    line-height: 23px;
+    margin: 20px 595px 5px 20px;
+    color: #000000;
+  }
+  &_heading {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22.5px;
+    line-height: 134.17%;
+    margin: 5px 72px 6px 20px;
+    /* or 30px */
+
+    color: #000000;
+  }
+  &_statement {
+    &-true {
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 134.17%;
+      margin: 6px 20px 16px 20px;
+      /* or 25px */
+
+      color: #5c5c5c;
+    }
+    &-false {
+      display: none;
+    }
+  }
+}

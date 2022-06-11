@@ -3,21 +3,39 @@
     font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    width: 105px;
-    line-height: 23px;
-    margin: 20px 595px 5px 20px;
+    font-size: 1rem;
+    line-height: 1.4375rem;
+    margin: 1.125rem 44.625% 5px 1.125rem;
     color: #000000;
+    @include respond(phone) {
+      font-weight: 300;
+      font-size: 0.5rem;
+      line-height: 0.5rem;
+    }
+    @include respond(tab-land) {
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 0.7rem;
+    }
   }
   &_heading {
     font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 600;
-    font-size: 22.5px;
+    font-size: 1.4375rem;
     line-height: 134.17%;
-    margin: 5px 72px 6px 20px;
+    margin: 5px 4.5rem 6px 1.125rem;
     /* or 30px */
-
+    @include respond(phone) {
+      font-weight: 300;
+      font-size: 0.75rem;
+      // line-height: 1rem;
+    }
+    @include respond(tab-land) {
+      font-weight: 450;
+      font-size: 1rem;
+      // line-height: 2rem;
+    }
     color: #000000;
   }
   &_statement {
@@ -25,10 +43,20 @@
       font-family: "IBM Plex Sans";
       font-style: normal;
       font-weight: 400;
-      font-size: 19px;
+      font-size: 1.1875rem;
       line-height: 134.17%;
-      margin: 6px 20px 16px 20px;
+      margin: 6px 1.125rem 1rem 1.125rem;
       /* or 25px */
+      @include respond(phone) {
+        font-weight: 200;
+        font-size: 0.5rem;
+        // line-height: 1rem;
+      }
+      @include respond(tab-land) {
+        font-weight: 300;
+        font-size: 0.75rem;
+        // line-height: 2rem;
+      }
 
       color: #5c5c5c;
     }

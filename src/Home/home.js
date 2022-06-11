@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
 // import "bootstrap/dist/css/bootstrap.css";
 import Bgimg1 from "./../assets/bgimg1.png";
 import Bgimg2 from "./../assets/bgimg2.png";
@@ -10,6 +12,8 @@ import Bag from "./../assets/logo/bag.svg";
 import Grp from "./../assets/logo/grp.svg";
 import Arrow from "./../assets/logo/down.svg";
 import Dot from "./../assets/logo/dots.svg";
+import Edit from "./../assets/logo/edit.svg";
+import Info from "./../assets/logo/info.svg";
 function Post(props) {
   return (
     <div className="post_con">
@@ -55,7 +59,11 @@ function Post(props) {
     </div>
   );
 }
-export default function home() {
+export default function Home() {
+  const { groupStatus, user } = useSelector((state) => state.custom);
+  console.log(groupStatus, "heyt");
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div className="container-fluid-ex">
@@ -70,7 +78,7 @@ export default function home() {
       </div>
       <section className="section">
         <div className="container-fluid section-nav">
-          <div>
+          <div className="section-nav1">
             <button className="section-nav_btn section-nav_btn-active">
               All Posts(32)
             </button>
@@ -79,65 +87,100 @@ export default function home() {
             <button className="section-nav_btn">Education</button>
             <button className="section-nav_btn">Job</button>
           </div>
+          <div className="section-nav2 container-fluid">
+            <button className=" section-nav_btn section-nav_btn-active">
+              All Posts(328)
+            </button>
+          </div>
           <div className="section-nav-btns">
             <button className="section-nav_secbtn">
               Write a Post <img src={Arrow} />
             </button>
-            <button className="section-nav_terbtn">
+            <button
+              className="section-nav_terbtn"
+              onClick={dispatch({ type: "updateGroupStatus" })}
+            >
               <img src={Grp} />
               Join Groups
             </button>
           </div>
         </div>
-        <Post
-          type="✍️Article"
-          img={Bgimg1}
-          heading="What if regular brands had regular fonts? Meet RegulaBrands!"
-          statement="I’ve worked in UX for the better part of a decade. F.."
-          name="Sarthak Kamra"
-          up="post_user-img1"
-          toggle="post-content_statement-true"
-          tagType="post-content_tagType-false"
-        />
-        <Post
-          type=" 🔬️ Education "
-          img={Bgimg2}
-          heading="Tax Benefits for Investment under National Pension Scheme launched by Government"
-          statement="I’ve worked in UX for the better part of a decade. F.."
-          up="post_user-img2"
-          name="Sarah West"
-          toggle="post-content_statement-true"
-          tagType="post-content_tagType-false"
-        />
-        <Post
-          type="🗓️ Meetup"
-          img={Bgimg3}
-          heading="Finance & Investment Elite Social Mixer @Lujiazui"
-          statement="I’ve worked in UX for the better part of a decade. F.."
-          up="post_user-img3"
-          name="Ronal Jones"
-          toggle="post-content_statement-false"
-          tagType="post-content_tagType-true"
-          logo={Calender}
-          info1="Fri, 12 Oct, 2018"
-          location="Ahmedabad, India"
-          btn="Visit Website"
-          btnClass="tagType-btn1"
-        />
-        <Post
-          type="💼️ Job "
-          heading="Software Develope"
-          statement="I’ve worked in UX for the better part of a decade. F.."
-          up="post_user-img4"
-          name="Joseph Gray"
-          toggle="post-content_statement-false"
-          tagType="post-content_tagType-true"
-          logo={Bag}
-          info1="Innovaccer Analytics Private Ltd."
-          location="Noida, India"
-          btn="Apply on Timesjobs"
-          btnClass="tagType-btn2"
-        />
+        <div className="sub-sec">
+          <div>
+            <Post
+              type="✍️Article"
+              img={Bgimg1}
+              heading="What if regular brands had regular fonts? Meet RegulaBrands!"
+              statement="I’ve worked in UX for the better part of a decade. F.."
+              name="Sarthak Kamra"
+              up="post_user-img1"
+              toggle="post-content_statement-true"
+              tagType="post-content_tagType-false"
+            />
+            <Post
+              type=" 🔬️ Education "
+              img={Bgimg2}
+              heading="Tax Benefits for Investment under National Pension Scheme launched by Government"
+              statement="I’ve worked in UX for the better part of a decade. F.."
+              up="post_user-img2"
+              name="Sarah West"
+              toggle="post-content_statement-true"
+              tagType="post-content_tagType-false"
+            />
+            <Post
+              type="🗓️ Meetup"
+              img={Bgimg3}
+              heading="Finance & Investment Elite Social Mixer @Lujiazui"
+              statement="I’ve worked in UX for the better part of a decade. F.."
+              up="post_user-img3"
+              name="Ronal Jones"
+              toggle="post-content_statement-false"
+              tagType="post-content_tagType-true"
+              logo={Calender}
+              info1="Fri, 12 Oct, 2018"
+              location="Ahmedabad, India"
+              btn="Visit Website"
+              btnClass="tagType-btn1"
+            />
+            <Post
+              type="💼️ Job "
+              heading="Software Develope"
+              statement="I’ve worked in UX for the better part of a decade. F.."
+              up="post_user-img4"
+              name="Joseph Gray"
+              toggle="post-content_statement-false"
+              tagType="post-content_tagType-true"
+              logo={Bag}
+              info1="Innovaccer Analytics Private Ltd."
+              location="Noida, India"
+              btn="Apply on Timesjobs"
+              btnClass="tagType-btn2"
+            />
+          </div>
+          {{ groupStatus } ? (
+            <div className="sub-sec_right">
+              <div className="sub-sec-location">
+                <div>
+                  <img src={Location} />
+                  Noida, India
+                </div>
+                <div className="edit-logo">
+                  <img src={Edit} />
+                </div>
+              </div>
+              <div>
+                <p className="sub-sec-statement">
+                  <img src={Info} />
+                  Your location will help us serve better and extend a
+                  personalised experience.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div>empty</div>
+          )}
+          ;
+        </div>
       </section>
     </div>
   );

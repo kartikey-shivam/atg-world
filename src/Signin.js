@@ -1,10 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import img from "./assets/img.png";
 import fb from "./assets/logo/fb.svg";
 import google from "./assets/logo/google.png";
+import Close from "./assets/logo/close.svg";
 export default function Signin() {
+  const dispatch = useDispatch();
+  const signupHandler = () => {
+    dispatch({ type: "updateSignStatus" });
+  };
+  const closeHandler = () => {
+    dispatch({ type: "closeHandler" });
+  };
   return (
     <div className="sign">
+      <img src={Close} className="close-logo" onClick={closeHandler} />
       <div className="sign-con">
         <div className="sign-text">
           <p>
@@ -38,7 +48,9 @@ export default function Signin() {
             <div className="right-text-1">
               <p>
                 Don’t have an account yet?{" "}
-                <span className="right-text-1_span">Create new for free!</span>
+                <span className="right-text-1_span" onClick={signupHandler}>
+                  Create new for free!
+                </span>
               </p>
             </div>
             <div className="img-box">

@@ -1,13 +1,16 @@
 import React from "react";
 // import SearchLogo from "./../assets/logo/Vector.png";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-
 import Logo from "./../assets/logo/mainlogo.png";
 import Search from "./../assets/logo/search.svg";
 import Arrow from "./../assets/logo/down.svg";
 import Up4 from "./../assets/up4.svg";
-export default function Layout() {
+export default function Layout({ head, title, childern }) {
+  const dispatch = useDispatch();
   const { groupStatus, user } = useSelector((state) => state.custom);
+  const updatePageStatus = () => {
+    dispatch({ type: "updateSignPage" });
+  };
   return (
     <div>
       <nav className="navbar container-fluid">
@@ -27,7 +30,10 @@ export default function Layout() {
           </div>
         ) : (
           <div className="login">
-            Create account. <span className="login-span">It’s free!</span>{" "}
+            Create account.{" "}
+            <span className="login-span" onClick={updatePageStatus}>
+              It’s free!
+            </span>{" "}
             <img src={Arrow} />
           </div>
         )}

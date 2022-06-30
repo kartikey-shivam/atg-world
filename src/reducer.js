@@ -6,6 +6,6 @@ const initialState = {
 
 export const customReducer = createReducer(initialState, {
   updateGroupStatus: (state, action) => {
-    state.groupStatus = true;
+    state.groupStatus = !state.groupStatus;
   },
 });

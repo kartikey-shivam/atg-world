@@ -1,0 +1,118 @@
+.sign {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-text {
+    width: 100%;
+    background: #effff4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0px 0px;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #008a45;
+    padding: 1rem 1.5rem 0rem 1.5rem;
+  }
+  &-con {
+    // background-color: aqua;
+    height: 80vh;
+    width: 58%;
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+  &_box {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    &-left {
+      padding: 1rem;
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      //   justify-content: center;
+      //   align-items: center;
+    }
+    &-right {
+      padding: 1rem;
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      //   justify-content: center;
+    }
+  }
+}
+.name-input {
+  width: 100%;
+  background-color: green;
+  display: flex;
+}
+.input {
+  &-1 {
+    width: 50%;
+    background: #f7f8fa;
+    border: 1px solid #d9d9db;
+    height: 2.875rem;
+    padding: 0.4rem;
+  }
+  &-2 {
+    background: #f7f8fa;
+    border: 1px solid #d9d9db;
+    height: 2.875rem;
+    padding: 0.4rem;
+  }
+}
+.img {
+  height: 100%;
+  width: 100%;
+  &-box {
+    width: 100%;
+  }
+}
+.right-text {
+  &-1 {
+    display: flex;
+    justify-content: flex-end;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-align: right;
+
+    color: #3d3d3d;
+
+    &_span {
+      color: rgba(47, 108, 229, 1);
+      cursor: pointer;
+    }
+  }
+  &-2 {
+    display: flex;
+    justify-content: center;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 16px;
+    /* identical to box height, or 145% */
+
+    text-align: right;
+    letter-spacing: -0.008em;
+
+    color: #000000;
+
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,44 @@
+.btn {
+  &-text {
+    margin: 1px 0rem 0rem 5px;
+  }
+  &-signup {
+    width: 100%;
+    height: 2.5rem;
+    background: #2f6ce5;
+    border: none;
+    border-radius: 20px;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    color: white;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &-other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.375rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    background: #ffffff;
+    border: 0.6px solid #d9d9db;
+    border-radius: 2px;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+    color: #000000;
+  }
+}
+.btn-follow {
+  background: #edeef0;
+  border-radius: 14px;
+  padding: 0.2rem 0.5rem;
+  border: none;
+}

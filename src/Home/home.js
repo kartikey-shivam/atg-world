@@ -14,6 +14,30 @@ import Arrow from "./../assets/logo/down.svg";
 import Dot from "./../assets/logo/dots.svg";
 import Edit from "./../assets/logo/edit.svg";
 import Info from "./../assets/logo/info.svg";
+import Img1 from "./../assets/img1.svg";
+import Img2 from "./../assets/img2.svg";
+import Img3 from "./../assets/img3.svg";
+import Img4 from "./../assets/img4.svg";
+import Ok from "./../assets/logo/ok.svg";
+import Lgrp from "./../assets/logo/lgrp.svg";
+
+function Groups(props) {
+  return (
+    <div className="grp">
+      <div className="">
+        <img src={props.img} alt="" className="grp-img" />
+      </div>
+      <div className="grp-name">
+        <p>{props.name}</p>
+      </div>
+      <div className="grp-btn">
+        <button type="" className="btn-follow">
+          Follow
+        </button>
+      </div>
+    </div>
+  );
+}
 function Post(props) {
   return (
     <div className="post_con">
@@ -61,9 +85,11 @@ function Post(props) {
 }
 export default function Home() {
   const { groupStatus, user } = useSelector((state) => state.custom);
-  console.log(groupStatus, "heyt");
+  // console.log(groupStatus, user, "heyt");
   const dispatch = useDispatch();
-
+  const grpHandler = () => {
+    dispatch({ type: "updateGroupStatus" });
+  };
   return (
     <div>
       <div className="container-fluid-ex">
@@ -97,11 +123,13 @@ export default function Home() {
               Write a Post <img src={Arrow} />
             </button>
             <button
-              className="section-nav_terbtn"
-              onClick={dispatch({ type: "updateGroupStatus" })}
+              className={
+                groupStatus ? "section-nav_terbtn1" : "section-nav_terbtn"
+              }
+              onClick={grpHandler}
             >
-              <img src={Grp} />
-              Join Groups
+              <img src={groupStatus ? Lgrp : Grp} className="icon-img" />
+              {groupStatus ? "Leave Groups" : "Join Groups"}
             </button>
           </div>
         </div>
@@ -157,29 +185,38 @@ export default function Home() {
               btnClass="tagType-btn2"
             />
           </div>
-          {{ groupStatus } ? (
-            <div className="sub-sec_right">
-              <div className="sub-sec-location">
-                <div>
-                  <img src={Location} />
-                  Noida, India
-                </div>
-                <div className="edit-logo">
-                  <img src={Edit} />
-                </div>
-              </div>
+          <div className="sub-sec_right">
+            <div className="sub-sec-location">
               <div>
-                <p className="sub-sec-statement">
-                  <img src={Info} />
-                  Your location will help us serve better and extend a
-                  personalised experience.
-                </p>
+                <img src={Location} />
+                Noida, India
+              </div>
+              <div className="edit-logo">
+                <img src={Edit} />
               </div>
             </div>
-          ) : (
-            <div>empty</div>
-          )}
-          ;
+            <div>
+              <p className="sub-sec-statement">
+                <img src={Info} />
+                Your location will help us serve better and extend a
+                personalised experience.
+              </p>
+            </div>
+            {groupStatus ? (
+              <div className="grp-con">
+                <div className="grp-head">
+                  <img src={Ok} />
+                  <p className="grp-head_para">Recommended Groups</p>
+                </div>
+                <Groups name="Leisure" img={Img1} />
+                <Groups name="Activism" img={Img2} />
+                <Groups name="MBA" img={Img3} />
+                <Groups name="Philosophy" img={Img4} />
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
       </section>
     </div>

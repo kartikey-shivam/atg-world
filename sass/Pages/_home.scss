@@ -83,6 +83,7 @@
     margin: 1rem 0rem;
   }
   &-nav {
+    position: relative;
     padding-left: 0;
     padding-right: 0;
     border-bottom: 1px solid #e0e0e0;
@@ -126,13 +127,19 @@
       }
     }
     &-btns {
-      margin: 1rem 0px 0.75rem 12rem;
+      // margin: 1rem 0px 0.75rem 12rem;
+      position: absolute;
+      right: 1rem;
+      top: 0.8rem;
+      // background-color: #02b875;
       @include respond(tab-port) {
         margin-left: 0rem;
       }
     }
     &_secbtn {
       // width: 9.375%;
+      padding: 0.5rem;
+
       height: 2.25rem;
       background-color: #edeef0;
       border: none;
@@ -146,8 +153,27 @@
         display: none;
       }
     }
+    &_terbtn1 {
+      width: 8.375rem;
+      padding: 0.5rem;
+      height: 2.25rem;
+      background: #ffffff;
+      border: 0.8px solid #989899;
+      margin-left: 1rem;
+      border-radius: 4px;
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      color: #6a6a6b;
+      @include respond(phone) {
+        display: none;
+      }
+    }
     &_terbtn {
-      // width: 9.375%;
+      width: 8.375rem;
+      padding: 0.5rem;
       height: 2.25rem;
       background-color: #2f6ce5;
       margin-left: 1rem;
@@ -370,6 +396,8 @@
   // background-color: #02b875;
 
   &_right {
+    display: flex;
+    flex-direction: column;
     margin: 4.6rem 0px 0px 50px;
     @include respond(tab-port) {
       display: none;
@@ -401,4 +429,62 @@
 }
 .edit-logo {
   margin-left: 50%;
+}
+.grp {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  width: 100%;
+  // background-color: green;
+  position: relative;
+  margin: 1rem 0rem;
+  &-con {
+    margin: 3rem 0rem;
+  }
+  &-head {
+    display: flex;
+    // background-color: #2f6ce5;
+    align-items: center;
+    &_para {
+      margin: 0rem 0rem 0rem 0.2rem;
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: #000000;
+    }
+  }
+  &-img {
+    // background-color: #2f6ce5;
+    height: 2rem;
+    width: 2rem;
+  }
+  &-name {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  &-btn {
+    position: absolute;
+    right: 0.2rem;
+    // top: 0;
+    background: #edeef0;
+    border-radius: 14px;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+  }
+}
+.icon-img {
+  margin: 0rem 0.5rem 0rem 0rem;
 }

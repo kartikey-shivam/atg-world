@@ -65,3 +65,33 @@
     }
   }
 }
+.heading {
+  &-tertiary {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    // line-height: 20px;
+    margin: 0rem 0rem 1rem 0rem;
+    color: #000000;
+  }
+}
+.text-box {
+  margin: 1.5rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+.left-text {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  text-align: center;
+  letter-spacing: -0.008em;
+
+  color: #000000;
+  cursor: pointer;
+}

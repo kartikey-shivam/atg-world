@@ -1,5 +1,5 @@
 .container-fluid-ex {
-  background-color: aqua;
+  // background-color: aqua;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.45),
@@ -18,17 +18,48 @@
     width: 100%;
   }
 }
-
+.phone-grp {
+  display: none;
+  position: absolute;
+  top: 12%;
+  // background-color: #02b875;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  @include respond(phone) {
+    display: flex;
+  }
+  @include respond(tab-port) {
+    display: flex;
+  }
+}
+.phn-btn {
+  border: 0.8px solid #ffffff;
+  // width: 10rem;
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+  color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  position: absolute;
+  right: 1rem;
+}
 .title {
   &_con {
     display: inline-block;
     position: relative;
-    top: 286px;
+    top: 17.875rem;
     // left: 200px;
     // top: 21.45%;
     left: 15%;
     height: 20vh;
     // background-color: aquamarine;
+    @include respond(tab-port) {
+      top: 21rem;
+      left: 8%;
+    }
     @include respond(phone) {
       top: 328px;
       left: 5%;
@@ -98,7 +129,8 @@
       display: none;
       @include respond(tab-port) {
         display: flex;
-        width: 50%;
+        width: 100%;
+        // background-color: #02b875;
       }
       @include respond(phone) {
         width: 100%;
@@ -170,6 +202,9 @@
       @include respond(phone) {
         display: none;
       }
+      @include respond(tab-port) {
+        display: none;
+      }
     }
     &_terbtn {
       width: 8.375rem;
@@ -185,6 +220,9 @@
       font-size: 1rem;
       line-height: 1.25rem;
       color: #ffffff;
+      @include respond(tab-port) {
+        display: none;
+      }
       @include respond(phone) {
         display: none;
       }
@@ -389,7 +427,37 @@
     position: absolute;
     right: 1.25rem;
     top: 0.625rem;
+    cursor: pointer;
   }
+}
+.option {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 8px;
+  border: solid 1px black;
+  width: 8rem;
+  background-color: white;
+  z-index: 250;
+  // display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  &_list {
+    width: 100%;
+    margin: 0.1rem;
+    padding: 0rem 0.2rem;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    // text-align: center;
+  }
+}
+.dot-con_img:hover ~ .option {
+  display: flex;
 }
 .sub-sec {
   display: flex;
@@ -487,4 +555,26 @@
 }
 .icon-img {
   margin: 0rem 0.5rem 0rem 0rem;
+}
+.phn-edit {
+  display: none;
+  cursor: pointer;
+  z-index: 200;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ff5c5c 0%, #f0568a 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18), 0px 0px 2px rgba(0, 0, 0, 0.08);
+  @include respond(phone) {
+    display: flex;
+  }
+  &_img {
+    height: 50%;
+    width: 50%;
+  }
 }

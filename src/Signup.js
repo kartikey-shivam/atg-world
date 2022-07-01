@@ -36,9 +36,14 @@ export default function Signup() {
               placeholder="Confirm Password"
               className="input-2"
             />
-            <button type="" className="btn-signup">
-              Create Account
-            </button>
+            <div className="btn_con">
+              <button type="" className="btn-signup">
+                Create Account
+              </button>
+              <p className="btn_con-text" onClick={updateSignStatus}>
+                or,sign in
+              </p>
+            </div>
             <button className="btn-other">
               <img src={fb} />
               <p className="btn-text">Sign up with facebook</p>
@@ -61,7 +66,7 @@ export default function Signup() {
               <img src={img} className="img" />
             </div>
             <div className="right-text-2">
-              <p>
+              <p className="right-text-2_child">
                 By signing up, you agree to our Terms & conditions, Privacy
                 policy
               </p>

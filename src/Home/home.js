@@ -20,7 +20,8 @@ import Img3 from "./../assets/img3.svg";
 import Img4 from "./../assets/img4.svg";
 import Ok from "./../assets/logo/ok.svg";
 import Lgrp from "./../assets/logo/lgrp.svg";
-
+import Back from "./../assets/logo/arrow.svg";
+// import Pen from "./../assets/logo/pen.svg";
 function Groups(props) {
   return (
     <div className="grp">
@@ -49,6 +50,11 @@ function Post(props) {
           <div className="dot-con_img">
             {" "}
             <img src={Dot} />
+            <div className="option">
+              <p className="option_list">Edit</p>
+              <p className="option_list">Report</p>
+              <p className="option_list">Option3</p>
+            </div>
           </div>
         </div>
         <p className={props.toggle}>{props.statement}</p>
@@ -92,10 +98,19 @@ export default function Home() {
   };
   return (
     <div>
+      <div className="phn-edit">
+        <img src={Edit} alt="" className="phn-edit_img" />
+      </div>
       <div className="container-fluid-ex">
-        <div className=" ">
-          <div></div>
-          <div></div>
+        <div className="phone-grp">
+          <div>
+            <img src={Back} alt="" />
+          </div>
+          <div>
+            <button type="" className="phn-btn" onClick={grpHandler}>
+              {groupStatus ? "Leave Group" : "Join Group"}
+            </button>
+          </div>
         </div>
         <div className="title_con">
           <h4 className="title_head">Computer Engineering</h4>

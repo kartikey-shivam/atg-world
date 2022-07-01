@@ -5,6 +5,10 @@ import Logo from "./../assets/logo/mainlogo.png";
 import Search from "./../assets/logo/search.svg";
 import Arrow from "./../assets/logo/down.svg";
 import Up4 from "./../assets/up4.svg";
+import Rectangle from "./../assets/logo/Rectangle.svg";
+import Oval from "./../assets/logo/Oval.svg";
+import Path from "./../assets/logo/Path.svg";
+
 export default function Layout({ head, title, childern }) {
   const dispatch = useDispatch();
   const { groupStatus, user } = useSelector((state) => state.custom);
@@ -14,6 +18,13 @@ export default function Layout({ head, title, childern }) {
   return (
     <div>
       <nav className="navbar container-fluid">
+        <div className="phn-nav">
+          <img src={Rectangle} alt="" />
+          &nbsp;&nbsp;
+          <img src={Oval} alt="" />
+          &nbsp;&nbsp;
+          <img src={Path} alt="" />
+        </div>
         <div className="navbar_child"></div>
         <div className="search">
           <img className="search-logo" src={Search} />

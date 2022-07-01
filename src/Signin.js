@@ -29,9 +29,14 @@ export default function Signin() {
             <input type="email" placeholder="Email" className="input-2" />
             <input type="password" placeholder="Password" className="input-2" />
 
-            <button type="" className="btn-signup">
-              Sign In
-            </button>
+            <div className="btn_con">
+              <button type="" className="btn-signup">
+                Sign In
+              </button>
+              <p className="btn_con-text" onClick={signupHandler}>
+                or,sign up
+              </p>
+            </div>
             <button className="btn-other">
               <img src={fb} />
               <p className="btn-text">Sign up with facebook</p>

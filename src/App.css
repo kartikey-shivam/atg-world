@@ -68,6 +68,12 @@
   font-size: 1.5rem;
   margin: 0rem 0rem 1rem 0rem;
   color: #000000; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-tertiary {
+      font-size: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading-tertiary {
+      font-size: 1.5rem; } }
 
 .text-box {
   margin: 1.5rem 0rem;
@@ -102,6 +108,10 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 16px; }
+  @media only screen and (max-width: 56.25em) {
+    .btn-signup {
+      width: 50%;
+      margin: 1rem 0.5rem; } }
 
 .btn-other {
   display: flex;
@@ -127,6 +137,25 @@
   padding: 0.2rem 0.5rem;
   border: none; }
 
+.btn_con {
+  display: flex;
+  width: 100%;
+  position: relative;
+  align-items: center; }
+  .btn_con-text {
+    position: absolute;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    right: 0;
+    display: none; }
+    @media only screen and (max-width: 37.5em) {
+      .btn_con-text {
+        display: flex;
+        font-size: 1.2rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .btn_con-text {
+        display: flex; } }
+
 .navbar {
   position: absolute;
   height: 4.5rem;
@@ -136,7 +165,8 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12); }
   @media only screen and (max-width: 37.5em) {
     .navbar {
-      width: 100%; } }
+      width: 100%;
+      height: 3rem; } }
   .navbar_child {
     margin-left: 1.125rem;
     width: 13.5%;
@@ -199,8 +229,21 @@
     .login {
       display: none; } }
 
+.phn-nav {
+  display: none;
+  width: 100%;
+  padding: 0rem 1rem;
+  justify-content: flex-end; }
+  @media only screen and (max-width: 37.5em) {
+    .phn-nav {
+      display: flex; } }
+  @media only screen and (max-width: 56.25em) {
+    .phn-nav {
+      display: flex; } }
+
 .sign {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   height: 100vh;
@@ -221,29 +264,64 @@
     font-weight: 700;
     font-size: 1rem;
     color: #008a45;
-    padding: 1rem 1.5rem 0rem 1.5rem; }
+    padding: 1rem 1.5rem 0rem 1.5rem;
+    position: absolute;
+    top: -1.6rem; }
+    @media only screen and (max-width: 75em) {
+      .sign-text {
+        font-size: 0.7rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .sign-text {
+        display: none;
+        border-radius: 12px; } }
   .sign-con {
     height: 80vh;
     width: 58%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #ffffff;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
-    border-radius: 8px; }
+    border-radius: 8px;
+    position: relative; }
+    @media only screen and (max-width: 75em) {
+      .sign-con {
+        width: 70%; } }
+    @media only screen and (max-width: 56.25em) {
+      .sign-con {
+        width: 100%;
+        height: 60vh;
+        position: absolute;
+        bottom: 0%; } }
+    @media only screen and (max-width: 37.5em) {
+      .sign-con {
+        height: 70vh; } }
   .sign_box {
     background-color: white;
     display: flex;
-    width: 100%; }
+    width: 100%;
+    padding: 3rem 2rem;
+    border-radius: 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .sign_box {
+        padding: 0; } }
     .sign_box-left {
       padding: 1rem;
       display: flex;
       width: 50%;
       flex-direction: column; }
+      @media only screen and (max-width: 56.25em) {
+        .sign_box-left {
+          width: 100%; } }
     .sign_box-right {
       padding: 1rem;
       display: flex;
       width: 50%;
       flex-direction: column; }
+      @media only screen and (max-width: 56.25em) {
+        .sign_box-right {
+          display: none; } }
 
 .name-input {
   width: 100%;
@@ -275,11 +353,14 @@
   font-family: "IBM Plex Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 17px;
   /* identical to box height */
   text-align: right;
   color: #3d3d3d; }
+  @media only screen and (max-width: 75em) {
+    .right-text-1 {
+      font-size: 0.8rem; } }
   .right-text-1_span {
     color: #2f6ce5;
     cursor: pointer; }
@@ -291,21 +372,40 @@
   font-style: normal;
   font-weight: 500;
   font-size: 0.7rem;
-  line-height: 16px;
+  line-height: 1.5rem;
   /* identical to box height, or 145% */
   text-align: right;
   letter-spacing: -0.008em;
   color: #000000;
   opacity: 0.6; }
+  .right-text-2_child {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start; }
+  @media only screen and (max-width: 75em) {
+    .right-text-2 {
+      font-size: 0.7rem; } }
 
 .close-logo {
   position: relative;
-  left: 59%;
-  top: -42%;
+  left: 60%;
+  top: -45%;
   cursor: pointer; }
+  @media only screen and (max-width: 75em) {
+    .close-logo {
+      left: 72%; } }
+  @media only screen and (max-width: 56.25em) {
+    .close-logo {
+      z-index: 200;
+      left: 47%;
+      top: -7%; } }
+  @media only screen and (max-width: 37.5em) {
+    .close-logo {
+      top: -16%;
+      left: 45%; } }
 
 .container-fluid-ex {
-  background-color: aqua;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)), url("./assets/logo/bgimg.svg");
   background-size: auto;
   background-repeat: no-repeat;
@@ -318,12 +418,38 @@
     .container-fluid-ex {
       width: 100%; } }
 
+.phone-grp {
+  display: none;
+  position: absolute;
+  top: 12%;
+  padding: 0.5rem 1rem;
+  width: 100%; }
+  @media only screen and (max-width: 37.5em) {
+    .phone-grp {
+      display: flex; } }
+  @media only screen and (max-width: 56.25em) {
+    .phone-grp {
+      display: flex; } }
+
+.phn-btn {
+  border: 0.8px solid #ffffff;
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+  color: white;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+  position: absolute;
+  right: 1rem; }
+
 .title_con {
   display: inline-block;
   position: relative;
-  top: 286px;
+  top: 17.875rem;
   left: 15%;
   height: 20vh; }
+  @media only screen and (max-width: 56.25em) {
+    .title_con {
+      top: 21rem;
+      left: 8%; } }
   @media only screen and (max-width: 37.5em) {
     .title_con {
       top: 328px;
@@ -387,7 +513,7 @@
       @media only screen and (max-width: 56.25em) {
         .section-nav2 {
           display: flex;
-          width: 50%; } }
+          width: 100%; } }
       @media only screen and (max-width: 37.5em) {
         .section-nav2 {
           width: 100%; } }
@@ -448,6 +574,9 @@
       @media only screen and (max-width: 37.5em) {
         .section-nav_terbtn1 {
           display: none; } }
+      @media only screen and (max-width: 56.25em) {
+        .section-nav_terbtn1 {
+          display: none; } }
     .section-nav_terbtn {
       width: 8.375rem;
       padding: 0.5rem;
@@ -462,6 +591,9 @@
       font-size: 1rem;
       line-height: 1.25rem;
       color: #ffffff; }
+      @media only screen and (max-width: 56.25em) {
+        .section-nav_terbtn {
+          display: none; } }
       @media only screen and (max-width: 37.5em) {
         .section-nav_terbtn {
           display: none; } }
@@ -635,7 +767,32 @@
   .dot-con_img {
     position: absolute;
     right: 1.25rem;
-    top: 0.625rem; }
+    top: 0.625rem;
+    cursor: pointer; }
+
+.option {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 8px;
+  border: solid 1px black;
+  width: 8rem;
+  background-color: white;
+  z-index: 250;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0; }
+  .option_list {
+    width: 100%;
+    margin: 0.1rem;
+    padding: 0rem 0.2rem;
+    cursor: pointer; }
+    .option_list:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
+
+.dot-con_img:hover ~ .option {
+  display: flex; }
 
 .sub-sec {
   display: flex; }
@@ -712,3 +869,24 @@
 
 .icon-img {
   margin: 0rem 0.5rem 0rem 0rem; }
+
+.phn-edit {
+  display: none;
+  cursor: pointer;
+  z-index: 200;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ff5c5c 0%, #f0568a 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18), 0px 0px 2px rgba(0, 0, 0, 0.08); }
+  @media only screen and (max-width: 37.5em) {
+    .phn-edit {
+      display: flex; } }
+  .phn-edit_img {
+    height: 50%;
+    width: 50%; }

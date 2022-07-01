@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Layout />
+      {/* <Signup /> */}
       <Home />
       {signPage ? (
         <div>{signinStatus ? <Signin /> : <Signup />}</div>
